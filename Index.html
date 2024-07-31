@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <div class="slides" style="--img: url('img1.jpg')">
+                <dev class="content">
+                    <h2>Slide 1</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+            <div class="slides" style="--img: url('img2.jpg')">
+                <dev class="content">
+                    <h2>Slide 2</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+            <div class="slides" style="--img: url('img3.jpg')">
+                <dev class="content">
+                    <h2>Slide 3</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+            <div class="slides" style="--img: url('img4.jpg')">
+                <dev class="content">
+                    <h2>Slide 4</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+            <div class="slides" style="--img: url('img5.jpg')">
+                <dev class="content">
+                    <h2>Slide 5</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+            <div class="slides" style="--img: url('img6.jpg')">
+                <dev class="content">
+                    <h2>Slide 6</h2>
+                    <p>"Nature always wears the colors of the spirit." 
+                        –Ralph Waldo Emerson</p>
+                </dev>
+            </div>
+        </div>
+        <div class="buttons">
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+    </div>
+    <script>
+        let next= document.querySelector('.next');
+        let prev= document.querySelector('.prev');
+        let slider= document.querySelector('.slider');
+
+        next.addEventListener('click',function(){
+            let slides= document.querySelectorAll('.slides');
+            slider.appendChild(slides[0]);
+        })
+        prev.addEventListener('click',function(){
+            let slides= document.querySelectorAll('.slides');
+            slider.prepend(slides[slides.length -1]);
+        })
+        let refreshInterval = setInterval(() => {
+            next.click();
+        }, 3000);
+        document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+});
+    </script>
+</body>    
+</html>
